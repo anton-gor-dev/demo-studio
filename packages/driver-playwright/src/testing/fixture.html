@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>demo-studio test fixture</title>
+  <style>
+    #scrollable { height: 150px; overflow-y: auto; border: 1px solid #ccc; }
+    #scroll-inner { height: 800px; }
+    [data-testid="result"] { display: none; }
+    [data-testid="hover-target"]:hover + [data-testid="tooltip"] { display: block; }
+    [data-testid="tooltip"] { display: none; }
+  </style>
+</head>
+<body>
+  <form id="form">
+    <input id="email" data-testid="email" type="email" placeholder="email" />
+    <input id="name"  data-testid="name"  type="text"  placeholder="name"  />
+    <button data-testid="submit" type="button">Submit</button>
+  </form>
+
+  <div data-testid="result">Welcome!</div>
+
+  <div data-testid="hover-target">Hover me</div>
+  <div data-testid="tooltip">Tooltip content</div>
+
+  <div id="scrollable" data-testid="scrollable">
+    <div id="scroll-inner"></div>
+  </div>
+
+  <script>
+    document.querySelector('[data-testid="submit"]').addEventListener('click', () => {
+      document.querySelector('[data-testid="result"]').style.display = 'block'
+    })
+  </script>
+</body>
+</html>

@@ -22,6 +22,9 @@
   "dependencies": {
     "@demo-studio/shared": "workspace:*"
   },
+  "devDependencies": {
+    "playwright": "^1.52.0"
+  },
   "peerDependencies": {
     "playwright": "^1.52.0"
   }
