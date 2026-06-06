@@ -1,0 +1,23 @@
+{
+  "name": "@demo-studio/web-ui",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "typecheck": "vue-tsc --noEmit",
+    "lint": "eslint src",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@demo-studio/core-dsl": "workspace:*",
+    "vue": "^3.5.16"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^6.0.7",
+    "jsdom": "^26.1.0",
+    "vite": "^6.3.5",
+    "vue-tsc": "^2.2.10"
+  }
+}
