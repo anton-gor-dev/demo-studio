@@ -20,6 +20,7 @@
     "test": "vitest run"
   },
   "dependencies": {
+    "@demo-studio/shared": "workspace:*",
     "zod": "^3.24.4"
   }
 }

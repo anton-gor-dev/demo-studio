@@ -88,6 +88,9 @@ importers:
 
   packages/core-dsl:
     dependencies:
+      '@demo-studio/shared':
+        specifier: workspace:*
+        version: link:../shared
       zod:
         specifier: ^3.24.4
         version: 3.25.76
