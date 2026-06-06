@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login — Test Fixture</title>
+  <style>
+    body { font-family: sans-serif; max-width: 400px; margin: 60px auto; }
+    .error { color: red; display: none; }
+    #dashboard { display: none; }
+  </style>
+</head>
+<body>
+  <section id="login-form">
+    <h1>Sign in</h1>
+    <input data-testid="email"    type="email"    placeholder="Email"    />
+    <input data-testid="password" type="password" placeholder="Password" />
+    <p class="error" data-testid="error">Invalid credentials</p>
+    <button data-testid="submit" type="button">Login</button>
+  </section>
+
+  <section id="dashboard">
+    <h1 data-testid="dashboard-heading">Dashboard</h1>
+    <p data-testid="welcome-message">Welcome!</p>
+  </section>
+
+  <script>
+    document.querySelector('[data-testid="submit"]').addEventListener('click', () => {
+      const email    = document.querySelector('[data-testid="email"]').value.trim()
+      const password = document.querySelector('[data-testid="password"]').value.trim()
+      if (!email || !password) {
+        document.querySelector('[data-testid="error"]').style.display = 'block'
+        return
+      }
+      document.getElementById('login-form').style.display = 'none'
+      document.getElementById('dashboard').style.display  = 'block'
+    })
+  </script>
+</body>
+</html>
